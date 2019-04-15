@@ -6,12 +6,12 @@ namespace Tests
 {
     public class Tests
     {
-        private IKnightsTourSolver _knightsTour;
+        private IKnightsTourSolver _knightsTourSolver;
 
         [SetUp]
         public void Setup()
         {
-            _knightsTour = new KnightsTourSolver();
+            _knightsTourSolver = new KnightsTourSolver();
         }
 
         [Test]
@@ -22,8 +22,28 @@ namespace Tests
         [TestCase(1, 0)]
         public void When_BoardSizeInvalid_Should_ReturnError(int rows, int cols)
         {
-            Assert.Throws<ArgumentException>(() => { _knightsTour.SolveKnightsTour(rows, cols); });
+            Assert.Throws<ArgumentException>(() => { _knightsTourSolver.SolveKnightsTour(rows, cols); });
         }
 
+        [Test]
+        public void When_NoSolution_Should_ReturnNull()
+        {
+            var solution = _knightsTourSolver.SolveKnightsTour(4, 4);
+            Assert.IsNull(solution);
+        }
+
+        [Test]
+        public void When_HasSolution_Should_ReturnSolution()
+        {
+            var solution = _knightsTourSolver.SolveKnightsTour(5, 5);
+            Assert.IsNotNull(solution);
+        }
+
+        [Test]
+        public void When_HasSolutionForChessBoard_Should_ReturnSolution()
+        {
+            var solution = _knightsTourSolver.SolveKnightsTour(8, 8);
+            Assert.IsNotNull(solution);
+        }
     }
 }
