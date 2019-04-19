@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="backtracking\KnightsTour\IKnightsTourSolver.cs" />
     <Compile Include="backtracking\KnightsTour\KnightsTourSolver.cs" />
+    <Compile Include="graph\IRoadsAndLibrariesSolver.cs" />
+    <Compile Include="graph\RoadsAndLibrariesSolver.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
