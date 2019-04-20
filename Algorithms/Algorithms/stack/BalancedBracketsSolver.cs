@@ -6,54 +6,35 @@ using System.Threading.Tasks;
 
 namespace Algorithms.stack
 {
-    public class BalancedBracketsSolver: IBalancedBracketsSolver
+    public class BalancedBracketsSolver : IBalancedBracketsSolver
     {
         public string IsBalanced(string s)
         {
-            Stack<char> stack = new Stack<char>();
+            var stack = new Stack<char>();
 
-            for (var i = 0; i < s.Length; i++)
+            foreach (var c in s)
             {
-                char c = s[i];
-
                 if (c == '{' || c == '[' || c == '(')
                 {
                     stack.Push(c);
                 }
-                else if (c == '}')
+                else if (c == '}' && stack.Count > 0 && stack.Peek() == '{')
                 {
-                    if (stack.Count > 0 && stack.Peek() == '{')
-                    {
-                        stack.Pop();
-                    }
-                    else
-                        return "NO";
+                    stack.Pop();
                 }
-                else if (c == ']')
+                else if (c == ']' && stack.Count > 0 && stack.Peek() == '[')
                 {
-                    if (stack.Count > 0 && stack.Peek() == '[')
-                    {
-                        stack.Pop();
-                    }
-                    else
-                        return "NO";
+                    stack.Pop();
                 }
-                else if (c == ')')
+                else if (c == ')' && stack.Count > 0 && stack.Peek() == '(')
                 {
-                    if (stack.Count > 0 && stack.Peek() == '(')
-                    {
-                        stack.Pop();
-                    }
-                    else
-                        return "NO";
+                    stack.Pop();
                 }
+                else
+                    return "NO";
             }
 
-            if (stack.Count == 0)
-            {
-                return "YES";
-            }
-            return "NO";
+            return stack.Count == 0 ? "YES" : "NO";
         }
     }
 }
