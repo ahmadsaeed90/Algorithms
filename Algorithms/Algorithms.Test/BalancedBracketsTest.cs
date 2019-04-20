@@ -22,6 +22,7 @@ namespace Algorithms.Test
         [TestCase("[](){()}")]
         [TestCase("()")]
         [TestCase("({}([][]))[]()")]
+        [TestCase("({[]})")]
         public void When_BalancedBrackets_Should_ReturnYes(string input)
         {
             Assert.AreEqual("YES", _balancedBracketsSolver.IsBalanced(input));
@@ -33,6 +34,7 @@ namespace Algorithms.Test
         [TestCase("{)[](}]}]}))}(())(")]
         [TestCase("([[)")]
         [TestCase("{(([])[])[]]}")]
+        [TestCase("][(]}})(")]
         public void When_BalancedNotBrackets_Should_ReturnNo(string input)
         {
             Assert.AreEqual("NO", _balancedBracketsSolver.IsBalanced(input));
