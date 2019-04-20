@@ -18,15 +18,10 @@ namespace Algorithms.stack
                 {
                     stack.Push(c);
                 }
-                else if (c == '}' && stack.Count > 0 && stack.Peek() == '{')
-                {
-                    stack.Pop();
-                }
-                else if (c == ']' && stack.Count > 0 && stack.Peek() == '[')
-                {
-                    stack.Pop();
-                }
-                else if (c == ')' && stack.Count > 0 && stack.Peek() == '(')
+                else if (stack.Count > 0 &&
+                            (c == '}' && stack.Peek() == '{')
+                            || (c == ']' && stack.Peek() == '[')
+                            || (c == ')' && stack.Peek() == '('))
                 {
                     stack.Pop();
                 }
