@@ -43,9 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="array\FindPairWithGivenSumSolver.cs" />
+    <Compile Include="array\IFindPairWithGivenSumSolver.cs" />
     <Compile Include="backtracking\KnightsTour\IKnightsTourSolver.cs" />
     <Compile Include="backtracking\KnightsTour\KnightsTourSolver.cs" />
+    <Compile Include="graph\INearestCloneSolver.cs" />
     <Compile Include="graph\IRoadsAndLibrariesSolver.cs" />
+    <Compile Include="graph\NearestCloneSolver.cs" />
     <Compile Include="graph\RoadsAndLibrariesSolver.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
