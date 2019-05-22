@@ -55,6 +55,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="stack\BalancedBracketsSolver.cs" />
     <Compile Include="stack\IBalancedBracketsSolver.cs" />
+    <Compile Include="string\ReverseSentenceSolver.cs" />
+    <Compile Include="tree\bst\BinaryTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -11,8 +11,8 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            //KnightTourGeeksForGeeks.solveKT();
-           //KnightsTourSolver.SolveKnightsTour();
+            Console.WriteLine(new ReverseSentenceSolver().ReverseSentence("you shall not pass"));
+            Console.WriteLine(new ReverseSentenceSolver().ReverseSentence("geeks quiz practice code"));
         }
     }
 }
