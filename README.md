@@ -1,3 +1,3 @@
 # Algorithms
 
-Several data structures implementations in C# with unit tests.
+Several data structures implementations in Java and C#.
