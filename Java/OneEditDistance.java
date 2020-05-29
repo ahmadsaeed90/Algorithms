@@ -7,7 +7,7 @@ class Solution {
         
         int i = 0;
         int j = 0;
-        boolean hasMismatch = false;
+        int diffCount = 0;
         
         while (i < s.length() && j < t.length()) {
             char c1 = s.charAt(i);
@@ -18,10 +18,10 @@ class Solution {
                 j++;
             }
             else {
-                if (hasMismatch)
+                if (diffCount > 0)
                     return false;
                 
-                hasMismatch = true;
+                diffCount++;
                 
                 // it's first mismatch
                 if (s.length() > t.length())
@@ -38,6 +38,9 @@ class Solution {
             }
         }
         
-        return hasMismatch || s.length() != t.length();
+        if (i < s.length() || j < t.length())
+            diffCount++;
+        
+        return diffCount == 1;
     }
 }
