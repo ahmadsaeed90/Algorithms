@@ -1,3 +1,5 @@
+//https://leetcode.com/problems/logger-rate-limiter/
+
 class Logger {
     
     private Map<String, Integer> map;
