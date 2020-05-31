@@ -1,3 +1,6 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 class HitCounter {
     Deque<Integer> queue;
     /** Initialize your data structure here. */
