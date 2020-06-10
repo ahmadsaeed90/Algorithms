@@ -10,7 +10,7 @@ class Solution {
             adjList.get(prereq[1]).add(prereq[0]);
         }
                                
-        var visited = new boolean[numCourses];  // will track one bfs
+        var visited = new boolean[numCourses];  // will track one dfs
         var checked = new boolean[numCourses];  // if a node is checked once, no need to check again ever
         
         for (int i = 0; i < numCourses; i++) {
