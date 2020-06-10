@@ -1,0 +1,47 @@
+class Solution {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+    
+        var adjList = new ArrayList<List<Integer>>(numCourses);
+        
+        for (int i = 0; i < numCourses; i++)
+            adjList.add(new ArrayList<Integer>());
+        
+        for (var prereq : prerequisites) {
+            adjList.get(prereq[1]).add(prereq[0]);
+        }
+                               
+        var visited = new boolean[numCourses];  // will track one bfs
+        var checked = new boolean[numCourses];  // if a node is checked once, no need to check again ever
+        
+        for (int i = 0; i < numCourses; i++) {
+            if (isCyclic(i, visited, adjList, checked))
+                return false;
+        }
+        
+        return true;
+    }
+                               
+    private boolean isCyclic(int course, boolean [] visited, List<List<Integer>> adjList, boolean [] checked) {
+        
+        if (checked[course])
+            return false;
+        
+        if (visited[course])
+            return true;
+        
+        visited[course] = true;
+        
+        var adjCourses = adjList.get(course);
+        boolean res = false;
+        
+        for (var adjC : adjCourses) {
+            res = isCyclic(adjC, visited, adjList, checked);
+            if (res) break;
+        }
+        
+        visited[course] = false;
+        checked[course] = true;
+        
+        return res;
+    }
+}
