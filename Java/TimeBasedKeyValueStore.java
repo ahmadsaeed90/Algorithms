@@ -43,9 +43,9 @@ public class TimeBasedKeyValueStore {
 		int index = Collections.binarySearch(list, new Pair(timestamp, ""),
 				(a, b) -> Integer.compare(a.Timestamp, b.Timestamp));
 
-		if (index >= 0) {
+		if (index >= 0) {   // found
 			return list.get(index).Value;
-		} else if (index == -1) {
+		} else if (index == -1) {   //not found and it must be added at index 0. which means nothing lower than this element
 			return "";
 		} else
 			return list.get(-index - 2).Value;
