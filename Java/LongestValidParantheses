@@ -1,0 +1,27 @@
+https://leetcode.com/problems/longest-valid-parenthese
+
+public class LongestValidParantheses {
+    public int longestValidParentheses(String s) {
+        
+        int max = 0;
+        var stack = new Stack<Integer>();
+        stack.push(-1);
+        
+        for (var i = 0; i < s.length(); i++) {
+            var c = s.charAt(i);
+            
+            if (c == '(')
+                stack.push(i);
+            else {
+                stack.pop();
+                if (stack.isEmpty())
+                    stack.push(i);
+                else {
+                    max = Math.max(i - stack.peek(), max);  
+                }
+            }   
+        }
+        
+        return max;
+    }
+}
