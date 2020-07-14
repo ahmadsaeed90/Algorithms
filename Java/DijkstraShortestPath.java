@@ -28,7 +28,7 @@ public class DijkstraShortestPath {
 
 					if (newNeigCost < dist[v.node]) {
 						dist[v.node] = newNeigCost;
-
+						// it is possible to have duplicate nodes in the queue but it is ok
 						pq.add(new Node(v.node, dist[v.node]));
 					}
 				}
