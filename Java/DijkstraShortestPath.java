@@ -20,7 +20,6 @@ public class DijkstraShortestPath {
 			Node u = pq.remove();
 
 			visited[u.node] = true;
-
 			var neighbours = adjList.get(u.node);
 
 			for (var v : neighbours) {
@@ -66,6 +65,7 @@ public class DijkstraShortestPath {
 		// Calculate the single source shortest path
 		int res = dijkstra(V, adj, source, dest);
 
+		System.out.println("Shortest distance from " + source + " to " + dest + "=" + res);
 		System.out.println("Shortest distance from " + source + " to " + dest + "=" + res);
 	}
 
